@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>华南农业大学精品课程网站</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/sm.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+	</head>
+
+	<body>
+		<!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+		<div class="page-group">
+			<!--登录页面-->
+			<div class="page page-current" id="up-page">
+				<!-- 标题栏 -->
+				<header class="bar bar-nav">
+					<h1 class='title'>发布作业</h1>
+				</header>
+				<div class="content">
+					<div class="list-block">
+						<ul>
+							<!-- Text inputs -->
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-name"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">标题</div>
+										<div class="item-input">
+											<input id="up-title" type="text" placeholder="标题">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-password"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">内容</div>
+										<div class="item-input">
+											<textarea id="up-txt"></textarea>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="content-block">
+						<div class="row">
+							<div class="col-50 btn-ok"><a href="#" class="button button-big button-fill button-success">确定</a></div>
+							<div class="col-50 btn-back"><a href="#" class="button button-big button-fill button-danger">取消</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/zepto.min.js"></script>
+		<script type="text/javascript" src="../js/sm.min.js"></script>
+		<script type="text/javascript">
+			$(".btn-ok").on("click", function() {
+				/*标题*/
+				var title = $("#up-title").val();
+				/*内容*/
+				var content = $("#up-txt").val();
+				$.ajax({
+					type: "get",
+					//						url: "http://121.42.183.198/clear.php",
+					url: "http://localhost/App/up_news.php",
+					dataType: "jsonp",
+					jsonp: "callback",
+					jsonpCallback: "data",
+					async: false,
+					data : {
+						title : title ,
+						content : content ,
+						id : localStorage.getItem("id")
+					},
+					success: function(data) {
+						if (data.code == "0") {
+							alert("发布成功");
+							window.location.href = "../index.html#news_page";
+						} else {
+							alert(data.msg);
+						}
+					}
+				});
+			});
+			$(".btn-back").on("click", function() {
+				$("#up-title").val("");
+				$("#up-txt").val("");
+				window.location.href = "../index.html#news_page";
+			})
+		</script>
+	</body>
+
+</html>

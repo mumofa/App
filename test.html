@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.body {
+				height: 3000px;
+				background: blue;
+			}
+			.mask {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				z-index: 100;
+				background: #000;
+				opacity: .3;
+			}
+			.img {
+				background: red;
+				width: 100px;
+				height: 100px;
+				z-index: 200;
+				position: absolute;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="innerBox"></div>
+		</div>
+	</body>
+	<script>
+		function getElementsByClassName(node,className){
+                if(node.getElementByClassName){
+                    //使用现有方法
+                    return node.getElementByClassName(className);
+                }else{
+                    var results = new Array();
+                    var elems = document.getElementsByTagName("*");
+                    for(var i=0;i<elems.length;i++){
+                        if(elems[i].className.indexOf(className) != -1){
+                            results[results.length] = elems[i];
+                        }
+                    }
+                    return results;
+                }
+            }
+
+            var bx = document.getElementById("box");
+            var inner = getElementsByClassName(bx,"innerBox");
+            console.log(inner.length)
+	</script>
+</html>

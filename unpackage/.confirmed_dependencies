@@ -1,0 +1,49 @@
+{
+	"index.html": {
+		"resources": [
+			"img/iconfont-icon12.png",
+			"css/main.css",
+			"js/zepto.min.js",
+			"js/sm.min.js",
+			"css/sm.min.css",
+			"js/plus.js",
+			"login.html",
+			"js/main.js",
+			"img/loading.gif"
+		],
+		"refer": [
+			"login.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"js/main.js",
+			"css/main.css",
+			"js/zepto.min.js",
+			"js/login.js",
+			"js/sm.min.js",
+			"css/sm.min.css",
+			"index.html"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"welcome.html": {
+		"resources": [
+			"img/欢迎页.png",
+			"index.html",
+			"css/main.css",
+			"js/zepto.min.js",
+			"js/sm.min.js",
+			"js/fx.js",
+			"css/sm.min.css",
+			"login.html",
+			"img/welcome.png"
+		],
+		"refer": [
+			"index.html",
+			"login.html"
+		]
+	}
+}

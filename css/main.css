@@ -1,0 +1,279 @@
+body {
+	font-family: Helvetica;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
+.mb15 {
+	margin-bottom: 15px;
+}
+
+.mt10 {
+	margin-top: 10px;
+}
+
+.mt15 {
+	margin-top: 15px;
+}
+
+.ml15 {
+	margin-left: 15px;
+}
+
+.m0 {
+	margin: 0;
+}
+
+.m-btn {
+	font-size: .8rem!important;
+	padding: 0;
+	line-height: 2.2rem;
+}
+
+.m-hide {display: none;}
+
+.m-loading {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -2rem;
+	margin-left: -2rem;
+	width: 4rem;
+	height: 4rem;
+	z-index: 1000;
+}
+
+.m-mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 999;
+	background: #000;
+	opacity: .8;
+	display: none;
+	box-sizing: border-box;
+}
+
+#welcome_page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 9999;
+}
+
+#welcome_img {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	left: 50%;
+	margin-left: -100px;
+	top: 50%;
+	margin-top: -100px;
+}
+
+/*以下是修改sm.min.css的*/
+
+.panel {
+	width: 8rem;
+}
+
+.m-page .item-title.label {
+	width: 75%;
+}
+
+body.with-panel-left-reveal .page {
+	-webkit-transform: translate3d(8rem, 0, 0);
+	transform: translate3d(8rem, 0, 0);
+}
+
+
+/*end 修改*/
+
+.m-content {
+	padding: .2rem .3rem;
+}
+
+.m-title {
+	font-size: 16px;
+}
+
+.m-p {
+	text-indent: 2em;
+	margin: 0;
+}
+
+.m-video {
+	width: 100%;
+	height: 10rem;
+}
+
+
+
+
+
+/*页面顶部bar*/
+
+.title {
+	background-color: #333;
+	color: #fff;
+}
+
+.m-menu {
+	/*background: url(../img/iconfont-caidan.png) no-repeat;*/
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+
+
+/*页面整体*/
+
+.page-title {
+	font-size: 20px;
+}
+
+
+/*侧边栏*/
+
+/*账号身份*/
+#m-type {color: #fff;}
+
+.btn-panel {margin: 0;
+margin-top: .2rem;
+}
+
+.current-li a {
+	color: #0894ec!important;
+	font-size: 18px;
+}
+
+.list-ul > li > a {
+	color: #6d6d72;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+
+
+/*头部*/
+
+.btn-new {
+	font-size: .8rem!important;
+}
+
+
+/*发布作业页面*/
+
+#up-page .list-block .item-content {
+	padding-left: .2rem;
+}
+
+#up-page .list-block .item-media+.item-inner {
+	margin-left: .2rem;
+}
+
+#up-page .list-block .item-title.label {
+	width: 20%;
+}
+
+#up-page #up-txt {
+	height: 10rem;
+}
+
+
+/*公告部分的样式*/
+
+.m-card-ell {
+	display: -webkit-box;
+	display: -moz-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 5;
+	padding-bottom: 0;
+	margin-bottom: .75rem;
+}
+
+.comments-card .comments-title {
+	padding: 0 .75rem;
+}
+
+.comments-card .comments-box {
+	border-bottom: 1px solid #E1E1E1;
+}
+
+.comments-card .comments-box:nth-child(2) {
+	border-top: 1px solid #E1E1E1;
+}
+
+#no_news {
+	text-align: center;
+	margin-top: 1rem;
+	font-size: 20px;
+	display: none;
+}
+
+/*公告详情页面*/
+
+#des_page .bar-nav~.content {
+	bottom: 2.2rem;
+}
+
+#des_page .bottom-bar:after {
+	top: 0;
+}
+
+#des_page .des-input {
+	bottom: 0;
+	background-color: #333;
+}
+#des_page .comments-title {
+	border-bottom: 1px solid #E1E1E1;
+}
+
+#des_page .des-input .button {
+	top: 0;
+}
+
+/*视频详情页面*/
+#viedo_box {
+	width: 100%;
+	margin-top: 2rem;	
+}
+#video {
+	width: 100%;
+	height: 100%;
+}
+:-webkit-full-screen {
+  position:fixed;
+  top:0; right:0; bottom:0; left:0;
+  margin:0;
+  box-sizing:border-box;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.css{
+    /*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/
+    -webkit-transform-style: preserve-3d;
+    /*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+     -ms-transform: translate3d(0, 0, 0);
+     transform: translate3d(0, 0, 0);
+}

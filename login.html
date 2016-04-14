@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>华南农业大学精品课程网站</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script src="js/fx.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/sm.min.js"></script>
+		
+		<!--<script type="text/javascript">
+			$.ajax({
+				type: "get",
+				//				url: "http://localhost/App/autoLogin.php",
+				url: "http://121.42.183.198/autoLogin.php",
+				dataType: "jsonp",
+				jsonp: "callback",
+				jsonpCallback: "data",
+				async: true,
+				success: function(data) {
+					var welcome_page = $("#welcome_page");
+					var img = welcome_page
+					if (data.code == "0") {
+						//						alert("登录成功");
+						welcome_page.animate({
+								opacity: 0.5
+							}, 
+							1000,//持续时间
+							'ease-out',
+							function(){								
+								window.location.href = "index.html";
+							});
+					} else {
+						setTimeout(function(){
+							welcome_page.animate({
+								opacity: 0
+							}, 
+							1000,//持续时间
+							'ease-out',
+							function(){								
+								welcome_page.hide();
+							})
+						},1000);
+					}
+				}
+			});
+		</script>-->
+		
+		<link rel="stylesheet" type="text/css" href="css/sm.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+	</head>
+
+	<body>
+		<!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+		<div class="page-group">
+			<!--登录页面-->
+			<div class="page page-current" id="login-page">
+				<!-- 标题栏 -->
+				<header class="bar bar-nav">
+					<h1 class='title'>登录页面</h1>
+				</header>
+				<div class="content">
+					<div class="list-block">
+						<ul>
+							<!-- Text inputs -->
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-name"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">账号</div>
+										<div class="item-input">
+											<input id="login-user" type="text" placeholder="您的账号">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-password"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">密码</div>
+										<div class="item-input">
+											<input id="login-password" type="password" placeholder="您的密码" class="">
+										</div>
+									</div>
+								</div>
+							</li>
+							<!-- 学生/教师 -->
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-toggle"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">类别</div>
+										<div class="item-input m-type">
+											<label for="student">
+												<input type="radio" name="type" id="student" value="0" checked />学生</label>
+											<label class="ml15" for="teacher">
+												<input type="radio" name="type" id="teacher" value="1" />教师</label>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="content-block">
+						<div class="row">
+							<div class="col-50 btn-login"><a href="#" class="button button-big button-fill button-success">确定</a></div>
+							<div class="col-50 btn-clear"><a href="#register-page" class="button button-big button-fill button-danger">注册</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--注册页面-->
+			<div class="page" id="register-page">
+				<!-- 标题栏 -->
+				<header class="bar bar-nav">
+					<h1 class='title'>注册页面</h1>
+				</header>
+				<div class="content">
+					<div class="list-block">
+						<ul>
+							<!-- Text inputs -->
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-name"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">账号</div>
+										<div class="item-input">
+											<input id="register-user" type="text" placeholder="请输入6到16位字符">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-name"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">姓名</div>
+										<div class="item-input">
+											<input id="register-name" type="text" placeholder="请输入您的名字">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-password"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">密码</div>
+										<div class="item-input">
+											<input id="register-password" type="password" placeholder="请输入6到16位字符" class="">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-password"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">确认密码</div>
+										<div class="item-input">
+											<input id="register-password-again" type="password" placeholder="请再次输入您的密码" class="">
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="content-block">
+						<div class="row">
+							<div class="col-50 btn-register"><a href="#" class="button button-big button-fill button-success">确定</a></div>
+							<div class="col-50 btn-clear"><a href="#login-page" class="button button-big button-fill button-danger">取消</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

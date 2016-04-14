@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>华南农业大学精品课程网站</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script src="js/fx.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/sm.min.js"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type: "get",
+				//				url: "http://localhost/App/autoLogin.php",
+				url: "http://121.42.183.198/autoLogin.php",
+				dataType: "jsonp",
+				jsonp: "callback",
+				jsonpCallback: "data",
+				async: true,
+				success: function(data) {
+					var img = $("#welcome_img")
+					if (data.code == "0") {
+						setTimeout(function(){
+							img.animate({
+								opacity: 0
+							}, 
+							1000,//持续时间
+							'ease-out',
+							function(){								
+								window.location.href = "index.html";
+							})
+						},1000);
+					} else {
+						setTimeout(function(){
+							img.animate({
+								opacity: 0
+							}, 
+							1000,//持续时间
+							'ease-out',
+							function(){								
+								window.location.href = "login.html";
+							})
+						},1000);
+					}
+				}
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/sm.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+	</head>
+
+	<body>
+		<!--欢迎图片-->
+		<div id="welcome_page">
+			<img id="welcome_img" src="img/welcome.png" />
+		</div>
+	</body>
+
+</html>
